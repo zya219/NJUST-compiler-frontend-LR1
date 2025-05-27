@@ -1,0 +1,12 @@
+Program        -> StmtList
+StmtList       -> Stmt StmtList | ε
+Stmt           -> DeclStmt limiter | AssignStmt limiter | IfStmt | ReturnStmt limiter
+DeclStmt       -> int identifier = Expr | float identifier = Expr
+AssignStmt     -> identifier = Expr
+IfStmt         -> if ( Expr RelOp Expr ) { StmtList }
+ReturnStmt     -> return identifier
+Expr           -> Expr + Term | Expr - Term | Term
+Term           -> Term \* Factor | Term / Factor | Factor
+Factor         -> ( Expr ) | const | identifier
+RelOp          -> == | != | < | <= | > | >=
+limiter        -> ; | , | ( | ) | { | }

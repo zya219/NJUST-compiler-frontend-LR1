@@ -1,0 +1,17 @@
+keyword   -> i f | e l s e | w h i l e | r e t u r n | i n t | f l o a t | c o m p l e x
+identifier-> L X
+X         -> L X | D X | ε
+L         -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+Number    -> Digits | Digits Frac | Digits Exp | Digits Frac Exp
+Digits    -> D Digits | D
+D         -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+Frac      -> . Digits
+Exp       -> E + Digits | E - Digits | E Digits | e + Digits | e - Digits | e Digits
+Imag      -> i
+const     -> Number | Number Imag | String
+operator  -> + | - | * | / | = | = =
+limiter   -> ; | , | ( | ) | { | }
+String    -> P S P
+S         -> L S | L S | Q S | ε
+Q         -> , | . | _ | + | * | / | \
+P         -> "

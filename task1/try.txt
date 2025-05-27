@@ -1,0 +1,11 @@
+
+
+# 正则优先匹配string
+STRING_REGEX = re.compile(r'^"(?:\\.|[^"\\])*"')  # 双引号内可含转义
+# 优先正则匹配字符串常量
+m_str = STRING_REGEX.match(line[pos:])
+if m_str:
+    val = m_str.group(0)
+    tokens.append(Token(ln, 'string', val))
+    pos += len(val)
+    continue
